@@ -11,14 +11,15 @@
     <a asp-page="Create">Create New</a>
 </p>
 
-<select asp-for="StreetName" asp-items="Model.GetStreetName">
-    <option value="">All</option>
-</select>
+
 
 <form>
     <p>
         Title: <input type="text" asp-for="SearchString" />
         <input type="submit" value="Filter" />
+        <select asp-for="StreetName" asp-items="Model.GetStreetName">
+            <option value="">All</option>
+        </select>
     </p>
 </form>
 
