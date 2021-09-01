@@ -34,6 +34,7 @@ namespace RazorPagesCovid.Pages.Covid.Users
 
         public async Task OnGetAsync()
         {
+
             IQueryable<string> getStreetNames = from u in _context.User
                                               orderby u.StreetName
                                               select u.StreetName;
