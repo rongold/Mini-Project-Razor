@@ -4,10 +4,11 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
-namespace RazorPagesFootball.Models
+namespace RazorPagesCovid.Models
 {
 	public class User
 	{
+		[Key]
 		public int UserId { get; set; }
 
 		public string AppointmentOneId { get; set; }
@@ -37,8 +38,11 @@ namespace RazorPagesFootball.Models
 		[DataType(DataType.PhoneNumber)]
 		public int PhoneNumber { get; set; }
 
-		public virtual Appointment AppointmentOne { get; set; }
-		public virtual Appointment AppointmentOne { get; set; }
+		[ForeignKey("AppointmentOne")]
+		public virtual Apppointment AppointmentOne { get; set; }
+		
+		[ForeignKey("AppointmentTwo")]
+		public virtual Apppointment AppointmentTwo { get; set; }
 
 	}
 }
