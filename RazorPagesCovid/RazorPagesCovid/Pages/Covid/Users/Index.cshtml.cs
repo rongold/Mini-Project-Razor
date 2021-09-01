@@ -26,11 +26,11 @@ namespace RazorPagesCovid.Pages.Covid.Users
         [BindProperty(SupportsGet = true)]
         public string SearchString { get; set; }
         
-        public SelectList GetUserName { get; set; }
+        public SelectList GetStreetName { get; set; }
        
         
         [BindProperty(SupportsGet = true)]
-        public string VaccineName { get; set; }
+        public string StreetName { get; set; }
 
         public async Task OnGetAsync()
         {
@@ -50,7 +50,9 @@ namespace RazorPagesCovid.Pages.Covid.Users
                                     u.StreetName,
                                     a.DateOfAppointment
                                  };*/
-
+            IQueryable<string> getStreetNames = from u in _context.User
+                                              orderby u.StreetName
+                                              select u.StreetName;
 
             var getPeopleNames = from u in _context.User
                                  select u;
@@ -60,14 +62,14 @@ namespace RazorPagesCovid.Pages.Covid.Users
                 getPeopleNames = getPeopleNames.Where(s => s.FirstName.Contains(SearchString) || s.LastName.Contains(SearchString));
             }
 
-            /*
-            if (!string.IsNullOrEmpty(VaccineName))
+            
+            if (!string.IsNullOrEmpty(StreetName))
             {
-                VaccineName = getPeopleNames.Where(x => x.VaccineName == VaccineName);
+                getPeopleNames = getPeopleNames.Where(x => x.StreetName == StreetName);
             }
-            */
 
-            //GetUserName = new SelectList(await genreQuery.Distinct().ToListAsync());
+
+            GetStreetName = new SelectList(await getStreetNames.Distinct().ToListAsync());
             User = await getPeopleNames.ToListAsync();
         }
     }
