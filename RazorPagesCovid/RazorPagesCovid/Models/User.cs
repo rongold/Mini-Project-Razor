@@ -45,7 +45,7 @@ namespace RazorPagesCovid.Models
 		[Required]
 		[Display(Name = "Phone Number")]
 		[RegularExpression(@"\(?\d{4}\)?-? *\d{3}-? *-?\d{4}|^\+(?:[0-9] ?){6,14}[0-9]$")]
-		public int PhoneNumber { get; set; }
+		public string PhoneNumber { get; set; }
 
 
 	}
