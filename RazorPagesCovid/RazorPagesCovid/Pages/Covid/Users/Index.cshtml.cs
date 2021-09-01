@@ -34,22 +34,6 @@ namespace RazorPagesCovid.Pages.Covid.Users
 
         public async Task OnGetAsync()
         {
-            /*var getPeopleNames = from a in _context.Apppointment
-                                 join u in _context.User
-                                 on a.UserId equals u.UserId
-                                 //join v in _context.Vaccine
-                                 //on a.VaccineId equals v.VaccineId
-                                 //orderby v.VaccineName
-                                 select new
-                                 { 
-                                    u.FirstName,
-                                    u.LastName,
-                                    u.Age,
-                                    u.HouseNumber,
-                                    u.PostCode,
-                                    u.StreetName,
-                                    a.DateOfAppointment
-                                 };*/
             IQueryable<string> getStreetNames = from u in _context.User
                                               orderby u.StreetName
                                               select u.StreetName;
