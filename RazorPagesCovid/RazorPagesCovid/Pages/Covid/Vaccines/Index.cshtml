@@ -1,0 +1,59 @@
+﻿@page
+@model RazorPagesCovid.Pages.Covid.Vaccines.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+
+<form>
+    <p>
+        <select asp-for="NameOfVaccine" asp-items="Model.GetVaccineNames">
+            <option value="">All</option>
+        </select>
+        Title: <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Vaccine[0].VaccineName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vaccine[0].DateOfRelease)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vaccine[0].CompanyName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Vaccine) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.VaccineName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfRelease)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompanyName)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.VaccineId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.VaccineId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.VaccineId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
