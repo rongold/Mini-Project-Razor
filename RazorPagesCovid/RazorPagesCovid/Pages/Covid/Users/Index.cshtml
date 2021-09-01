@@ -34,12 +34,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.User[0].PhoneNumber)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.User[0].AppointmentOne)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.User[0].AppointmentTwo)
-            </th>
             <th></th>
         </tr>
     </thead>
@@ -66,12 +60,6 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.PhoneNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AppointmentOne.AppointmentId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AppointmentTwo.AppointmentId)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.UserId">Edit</a> |

@@ -32,14 +32,19 @@ namespace RazorPagesCovid.Migrations
                     b.Property<string>("Location")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
                     b.Property<int>("VaccineId")
                         .HasColumnType("int");
 
                     b.HasKey("AppointmentId");
 
+                    b.HasIndex("UserId");
+
                     b.HasIndex("VaccineId");
 
-                    b.ToTable("Apppointments");
+                    b.ToTable("Apppointment");
                 });
 
             modelBuilder.Entity("RazorPagesCovid.Models.User", b =>
@@ -50,12 +55,6 @@ namespace RazorPagesCovid.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("Age")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("AppointmentOneId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("AppointmentTwoId")
                         .HasColumnType("int");
 
                     b.Property<string>("FirstName")
@@ -80,11 +79,7 @@ namespace RazorPagesCovid.Migrations
 
                     b.HasKey("UserId");
 
-                    b.HasIndex("AppointmentOneId");
-
-                    b.HasIndex("AppointmentTwoId");
-
-                    b.ToTable("Users");
+                    b.ToTable("User");
                 });
 
             modelBuilder.Entity("RazorPagesCovid.Models.Vaccine", b =>
@@ -105,33 +100,26 @@ namespace RazorPagesCovid.Migrations
 
                     b.HasKey("VaccineId");
 
-                    b.ToTable("Vaccines");
+                    b.ToTable("Vaccine");
                 });
 
             modelBuilder.Entity("RazorPagesCovid.Models.Apppointment", b =>
                 {
+                    b.HasOne("RazorPagesCovid.Models.User", "user")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("RazorPagesCovid.Models.Vaccine", "Vaccine")
                         .WithMany()
                         .HasForeignKey("VaccineId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.Navigation("user");
+
                     b.Navigation("Vaccine");
-                });
-
-            modelBuilder.Entity("RazorPagesCovid.Models.User", b =>
-                {
-                    b.HasOne("RazorPagesCovid.Models.Apppointment", "AppointmentOne")
-                        .WithMany()
-                        .HasForeignKey("AppointmentOneId");
-
-                    b.HasOne("RazorPagesCovid.Models.Apppointment", "AppointmentTwo")
-                        .WithMany()
-                        .HasForeignKey("AppointmentTwoId");
-
-                    b.Navigation("AppointmentOne");
-
-                    b.Navigation("AppointmentTwo");
                 });
 #pragma warning restore 612, 618
         }

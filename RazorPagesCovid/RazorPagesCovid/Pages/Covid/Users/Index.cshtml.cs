@@ -23,9 +23,7 @@ namespace RazorPagesCovid.Pages.Covid.Users
 
         public async Task OnGetAsync()
         {
-            User = await _context.Users
-                .Include(u => u.AppointmentOne)
-                .Include(u => u.AppointmentTwo).ToListAsync();
+            User = await _context.User.ToListAsync();
         }
     }
 }

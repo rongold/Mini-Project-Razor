@@ -12,9 +12,9 @@ namespace RazorPagesCovid.Pages.Covid.Appointments
 {
     public class IndexModel : PageModel
     {
-        private readonly RazorPagesCovidContext _context;
+        private readonly RazorPagesCovid.Data.RazorPagesCovidContext _context;
 
-        public IndexModel(RazorPagesCovidContext context)
+        public IndexModel(RazorPagesCovid.Data.RazorPagesCovidContext context)
         {
             _context = context;
         }
@@ -23,8 +23,9 @@ namespace RazorPagesCovid.Pages.Covid.Appointments
 
         public async Task OnGetAsync()
         {
-            Apppointment = await _context.Apppointments
-                .Include(a => a.Vaccine).ToListAsync();
+            Apppointment = await _context.Apppointment
+                .Include(a => a.Vaccine)
+                .Include(a => a.user).ToListAsync();
         }
     }
 }

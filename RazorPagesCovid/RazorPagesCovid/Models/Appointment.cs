@@ -19,6 +19,9 @@ namespace RazorPagesCovid.Models
         [ForeignKey("VaccineId")]
         public virtual Vaccine Vaccine { get; set; }
 
+        public int UserId { get; set; }
+
+        public virtual User user { get; set; }
 
     }
 }

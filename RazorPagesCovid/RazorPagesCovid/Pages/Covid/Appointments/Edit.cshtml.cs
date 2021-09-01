@@ -30,14 +30,16 @@ namespace RazorPagesCovid.Pages.Covid.Appointments
                 return NotFound();
             }
 
-            Apppointment = await _context.Apppointments
-                .Include(a => a.Vaccine).FirstOrDefaultAsync(m => m.AppointmentId == id);
+            Apppointment = await _context.Apppointment
+                .Include(a => a.Vaccine)
+                .Include(a => a.user).FirstOrDefaultAsync(m => m.AppointmentId == id);
 
             if (Apppointment == null)
             {
                 return NotFound();
             }
            ViewData["VaccineId"] = new SelectList(_context.Set<Vaccine>(), "VaccineId", "VaccineId");
+           ViewData["UserId"] = new SelectList(_context.Set<User>(), "UserId", "UserId");
             return Page();
         }
 
@@ -73,7 +75,7 @@ namespace RazorPagesCovid.Pages.Covid.Appointments
 
         private bool ApppointmentExists(int id)
         {
-            return _context.Apppointments.Any(e => e.AppointmentId == id);
+            return _context.Apppointment.Any(e => e.AppointmentId == id);
         }
     }
 }

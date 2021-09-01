@@ -30,16 +30,12 @@ namespace RazorPagesCovid.Pages.Covid.Users
                 return NotFound();
             }
 
-            User = await _context.Users
-                .Include(u => u.AppointmentOne)
-                .Include(u => u.AppointmentTwo).FirstOrDefaultAsync(m => m.UserId == id);
+            User = await _context.User.FirstOrDefaultAsync(m => m.UserId == id);
 
             if (User == null)
             {
                 return NotFound();
             }
-           ViewData["AppointmentOneId"] = new SelectList(_context.Apppointments, "AppointmentId", "AppointmentId");
-           ViewData["AppointmentTwoId"] = new SelectList(_context.Apppointments, "AppointmentId", "AppointmentId");
             return Page();
         }
 
@@ -75,7 +71,7 @@ namespace RazorPagesCovid.Pages.Covid.Users
 
         private bool UserExists(int id)
         {
-            return _context.Users.Any(e => e.UserId == id);
+            return _context.User.Any(e => e.UserId == id);
         }
     }
 }
