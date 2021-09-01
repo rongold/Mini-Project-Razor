@@ -17,5 +17,7 @@ namespace RazorPagesCovid.Data
         public DbSet<RazorPagesCovid.Models.Apppointment> Apppointment { get; set; }
 
         public DbSet<RazorPagesCovid.Models.User> User { get; set; }
+
+        public DbSet<RazorPagesCovid.Models.Vaccine> Vaccine { get; set; }
     }
 }
