@@ -28,8 +28,9 @@ namespace RazorPagesCovid.Pages.Covid.Appointments
                 return NotFound();
             }
 
-            Apppointment = await _context.Apppointments
-                .Include(a => a.Vaccine).FirstOrDefaultAsync(m => m.AppointmentId == id);
+            Apppointment = await _context.Apppointment
+                .Include(a => a.Vaccine)
+                .Include(a => a.user).FirstOrDefaultAsync(m => m.AppointmentId == id);
 
             if (Apppointment == null)
             {

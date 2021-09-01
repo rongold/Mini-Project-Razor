@@ -21,8 +21,6 @@ namespace RazorPagesCovid.Pages.Covid.Users
 
         public IActionResult OnGet()
         {
-        ViewData["AppointmentOneId"] = new SelectList(_context.Apppointments, "AppointmentId", "AppointmentId");
-        ViewData["AppointmentTwoId"] = new SelectList(_context.Apppointments, "AppointmentId", "AppointmentId");
             return Page();
         }
 
@@ -37,7 +35,7 @@ namespace RazorPagesCovid.Pages.Covid.Users
                 return Page();
             }
 
-            _context.Users.Add(User);
+            _context.User.Add(User);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

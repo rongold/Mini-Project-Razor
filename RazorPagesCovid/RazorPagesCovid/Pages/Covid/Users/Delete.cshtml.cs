@@ -29,9 +29,7 @@ namespace RazorPagesCovid.Pages.Covid.Users
                 return NotFound();
             }
 
-            User = await _context.Users
-                .Include(u => u.AppointmentOne)
-                .Include(u => u.AppointmentTwo).FirstOrDefaultAsync(m => m.UserId == id);
+            User = await _context.User.FirstOrDefaultAsync(m => m.UserId == id);
 
             if (User == null)
             {
@@ -47,11 +45,11 @@ namespace RazorPagesCovid.Pages.Covid.Users
                 return NotFound();
             }
 
-            User = await _context.Users.FindAsync(id);
+            User = await _context.User.FindAsync(id);
 
             if (User != null)
             {
-                _context.Users.Remove(User);
+                _context.User.Remove(User);
                 await _context.SaveChangesAsync();
             }
 

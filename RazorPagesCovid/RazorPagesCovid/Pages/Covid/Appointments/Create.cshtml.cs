@@ -22,6 +22,7 @@ namespace RazorPagesCovid.Pages.Covid.Appointments
         public IActionResult OnGet()
         {
         ViewData["VaccineId"] = new SelectList(_context.Set<Vaccine>(), "VaccineId", "VaccineId");
+        ViewData["UserId"] = new SelectList(_context.Set<User>(), "UserId", "UserId");
             return Page();
         }
 
@@ -36,7 +37,7 @@ namespace RazorPagesCovid.Pages.Covid.Appointments
                 return Page();
             }
 
-            _context.Apppointments.Add(Apppointment);
+            _context.Apppointment.Add(Apppointment);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
