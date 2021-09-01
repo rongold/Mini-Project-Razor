@@ -11,9 +11,9 @@ namespace RazorPagesCovid.Models
 		[Key]
 		public int UserId { get; set; }
 
-		public string AppointmentOneId { get; set; }
+		public int? AppointmentOneId { get; set; }
 
-		public string AppointmentTwoId { get; set; }
+		public int? AppointmentTwoId { get; set; }
 
 
 		[RegularExpression(@"^[A-Z]+[a-zA-Z]*$")]
@@ -38,10 +38,10 @@ namespace RazorPagesCovid.Models
 		[DataType(DataType.PhoneNumber)]
 		public int PhoneNumber { get; set; }
 
-		[ForeignKey("AppointmentOne")]
+		[ForeignKey("AppointmentOneId")]
 		public virtual Apppointment AppointmentOne { get; set; }
 		
-		[ForeignKey("AppointmentTwo")]
+		[ForeignKey("AppointmentTwoId")]
 		public virtual Apppointment AppointmentTwo { get; set; }
 
 	}

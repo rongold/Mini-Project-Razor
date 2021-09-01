@@ -1,0 +1,43 @@
+﻿@page
+@model RazorPagesCovid.Pages.Covid.Appointments.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Apppointment</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Apppointment.Location" class="control-label"></label>
+                <input asp-for="Apppointment.Location" class="form-control" />
+                <span asp-validation-for="Apppointment.Location" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Apppointment.DateOfAppointment" class="control-label"></label>
+                <input asp-for="Apppointment.DateOfAppointment" class="form-control" />
+                <span asp-validation-for="Apppointment.DateOfAppointment" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Apppointment.VaccineId" class="control-label"></label>
+                <select asp-for="Apppointment.VaccineId" class ="form-control" asp-items="ViewBag.VaccineId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
