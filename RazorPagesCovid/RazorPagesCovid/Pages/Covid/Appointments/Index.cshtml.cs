@@ -23,6 +23,15 @@ namespace RazorPagesCovid.Pages.Covid.Appointments
         public IList<Apppointment> Apppointment { get;set; }
         public int? UserId { get; set; }
 
+        [BindProperty(SupportsGet = true)]
+        public string SearchString { get; set; }
+
+        public SelectList GetAppointments { get; set; }
+
+
+        [BindProperty(SupportsGet = true)]
+        public string NameOfVaccine { get; set; }
+
         public async Task OnGetAsync()
         {
             IQueryable<string> VaccineNames = from v in _context.Vaccine
