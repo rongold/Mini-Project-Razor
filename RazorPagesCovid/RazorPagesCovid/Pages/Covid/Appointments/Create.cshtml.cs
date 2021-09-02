@@ -45,10 +45,6 @@ namespace RazorPagesCovid.Pages.Covid.Appointments
             _context.Apppointment.Add(Apppointment);
             await _context.SaveChangesAsync();
 
-            Apppointment.DateOfAppointment.AddDays(60);
-            _context.Apppointment.Add(Apppointment);
-            await _context.SaveChangesAsync();
-
             return RedirectToPage("./Index");
         }
     }
