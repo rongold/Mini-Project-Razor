@@ -75,11 +75,12 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.PhoneNumber)
                 </td>
-                <td>
-                    <a asp-page="./Edit" asp-route-id="@item.UserId">Edit</a> |
-                    <a asp-page="./Details" asp-route-id="@item.UserId">Details</a> |
-                    <a asp-page="./Delete" asp-route-id="@item.UserId">Delete</a>
-                </td>
+				<td>
+					<a asp-page="./Edit" asp-route-id="@item.UserId">Edit</a> |
+					<a asp-page="./Details" asp-route-id="@item.UserId">Details</a> |
+					<a asp-page="./Delete" asp-route-id="@item.UserId">Delete</a> |
+					<a asp-page="/Covid/Appointments/Index" asp-page-handler="User" asp-route-id="@item.UserId">Appointment</a>
+				</td>
             </tr>
         }
     </tbody>

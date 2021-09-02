@@ -27,5 +27,12 @@ namespace RazorPagesCovid.Pages.Covid.Appointments
                 .Include(a => a.Vaccine)
                 .Include(a => a.user).ToListAsync();
         }
+
+        public async Task OnGetUserAsync(int? id)
+        {
+            Apppointment = await _context.Apppointment
+                .Include(a => a.Vaccine)
+                .Include(a => a.user).Where(a => a.UserId == id).ToListAsync();
+        }
     }
 }
