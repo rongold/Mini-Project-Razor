@@ -22,7 +22,7 @@ namespace RazorPagesCovid.Pages.Covid.Appointments
 
         public IList<Apppointment> Apppointment { get;set; }
         public int? UserId { get; set; }
-        
+
         [BindProperty(SupportsGet = true)]
         public string SearchString { get; set; }
 
