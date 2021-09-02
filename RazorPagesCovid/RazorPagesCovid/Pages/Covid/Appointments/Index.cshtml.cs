@@ -20,6 +20,7 @@ namespace RazorPagesCovid.Pages.Covid.Appointments
         }
 
         public IList<Apppointment> Apppointment { get;set; }
+        public int? UserId { get; set; }
 
         public async Task OnGetAsync()
         {
@@ -30,9 +31,10 @@ namespace RazorPagesCovid.Pages.Covid.Appointments
 
         public async Task OnGetUserAsync(int? id)
         {
+            UserId = id;
             Apppointment = await _context.Apppointment
                 .Include(a => a.Vaccine)
-                .Include(a => a.user).Where(a => a.UserId == id).ToListAsync();
+                .Include(a => a.user).Where(a => a.UserId == UserId).ToListAsync();
         }
     }
 }
