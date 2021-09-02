@@ -6,6 +6,32 @@ a.navbar-brand {
   text-align: center;
   word-break: break-all;
 }
+.navbar-nav li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+.navbar-nav li a{
+    text-decoration: none;
+    color: #fff;
+    text-transform:uppercase;
+}
+.navbar-nav li ::after{
+    content:'';
+    height: 3px;
+    width:0;
+    background: #009688;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+
+}
+.navbar-nav li:hover ::after{
+    width: 100%;
+
+}
 
 /* Provide sufficient contrast against white background */
 a {
@@ -61,6 +87,8 @@ html {
 body {
     /* Margin bottom by footer height */
     margin-bottom: 60px;
+    background-color:#E3E3E3;
+    /*background-image: url(background.jpg);*/
 }
 .footer {
   position: absolute;

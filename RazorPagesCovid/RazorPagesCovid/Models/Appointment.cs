@@ -8,22 +8,20 @@ namespace RazorPagesCovid.Models
     {
         [Key]
         public int AppointmentId { get; set; }
-        [RegularExpression(@"^[A-Z]+[a-zA-Z\s]*$")]
-        [Required]
-        [StringLength(1000)]
+
+        [Required,StringLength(1000),RegularExpression(@"^[A-Z]+[a-zA-Z\s]*$")]
         public string Location { get; set; }
 
-        [DataType(DataType.Date)]
-        [Display(Name = "Date of Appointment")]
+        [Display(Name = "Date of Appointment"), DataType(DataType.Date)]
         public DateTime DateOfAppointment { get; set; }
-        [Required]
-        [Display(Name = "Vaccine")]
+        
+        [Display(Name = "Vaccine"), Required]
         public int VaccineId { get; set; }
 
         [ForeignKey("VaccineId")]
         public virtual Vaccine Vaccine { get; set; }
-        [Required]
-        [Display(Name = "User ID")]
+        
+        [Display(Name = "User ID"), Required]
         public int UserId { get; set; }
 
         public virtual User user { get; set; }
