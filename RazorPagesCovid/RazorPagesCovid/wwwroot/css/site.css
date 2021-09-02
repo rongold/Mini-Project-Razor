@@ -142,5 +142,5 @@ body {
     left: 0;
     transition: 0.5s;
     background: #009688;
-    width:stretch;
+    width:fit-content;
 }
