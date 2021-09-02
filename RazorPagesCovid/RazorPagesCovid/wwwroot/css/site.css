@@ -37,7 +37,7 @@ a.navbar-brand {
 
 /* Provide sufficient contrast against white background */
 a {
-  color: white;
+  color: #000;
 }
 
 .btn-primary {
@@ -90,15 +90,15 @@ body {
     /* Margin bottom by footer height */
     margin-bottom: 60px;
     /*background-color:#E3E3E3;*/
-    background-image: url(background.jpg);
-    color: white;
+    background-image: url(background2.jpg);
+    color: black;
 }
 .footer {
     position: absolute;
     bottom: 0;
     width: 100%;
     white-space: nowrap;
-    background-color:#E3E3E3;
+    background-color:#fff;
     line-height: 60px; /* Vertically center the text there */
 }
 .display-4 {
@@ -109,9 +109,11 @@ body {
     text-align: center;
     
 }
+
 .table {
-    color: white;
-}.table td a{
-    color:red;
-}
+    color: black;
+}
+.table td a {      
+     font-weight: bold;
+}
 
