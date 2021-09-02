@@ -17,7 +17,7 @@ namespace RazorPagesCovid.Models
         [Display(Name = "Date of Appointment")]
         public DateTime DateOfAppointment { get; set; }
         [Required]
-        [Display(Name = "Vaccine ID")]
+        [Display(Name = "Vaccine")]
         public int VaccineId { get; set; }
 
         [ForeignKey("VaccineId")]
