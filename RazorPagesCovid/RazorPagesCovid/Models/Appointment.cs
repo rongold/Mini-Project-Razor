@@ -24,7 +24,7 @@ namespace RazorPagesCovid.Models
         [Display(Name = "User ID"), Required]
         public int UserId { get; set; }
 
-        public virtual User user { get; set; }
+        public virtual User User { get; set; }
 
     }
 }

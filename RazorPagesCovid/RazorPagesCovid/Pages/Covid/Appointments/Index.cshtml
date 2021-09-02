@@ -45,7 +45,7 @@
                 @Html.DisplayNameFor(model => model.Apppointment[0].Vaccine)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Apppointment[0].UserId)
+                @Html.DisplayNameFor(model => model.Apppointment[0].User)
             </th>
             <th></th>
         </tr>
@@ -60,10 +60,10 @@
                 @Html.DisplayFor(modelItem => item.DateOfAppointment)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.VaccineId)
+                @Html.DisplayFor(modelItem => item.Vaccine.VaccineName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.UserId)
+                @Html.DisplayFor(modelItem => item.User.FullName)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.AppointmentId">Edit</a> |

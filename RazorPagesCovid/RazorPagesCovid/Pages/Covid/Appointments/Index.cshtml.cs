@@ -39,12 +39,12 @@ namespace RazorPagesCovid.Pages.Covid.Appointments
                                               select v.VaccineName;
 
 
-            var getPeopleNames = from u in _context.Apppointment
+            var getPeopleNames = from u in _context.Apppointment.Include(u => u.User).Include(u => u.Vaccine)
                                  select u;
 
             if (!string.IsNullOrEmpty(SearchString))
             {
-                getPeopleNames = getPeopleNames.Where(s => s.user.FirstName.Contains(SearchString) || s.user.LastName.Contains(SearchString) || s.Location.Contains(SearchString));
+                getPeopleNames = getPeopleNames.Where(s => s.User.FirstName.Contains(SearchString) || s.User.LastName.Contains(SearchString) || s.Location.Contains(SearchString));
             }
 
 
@@ -57,12 +57,12 @@ namespace RazorPagesCovid.Pages.Covid.Appointments
             Apppointment = await getPeopleNames.ToListAsync();
         }
 
-        public async Task OnGetUserAsync(int? id)
-        {
-            UserId = id;
-            Apppointment = await _context.Apppointment
-                .Include(a => a.Vaccine)
-                .Include(a => a.user).Where(a => a.UserId == UserId).ToListAsync();
-        }
+        //public async Task OnGetUserAsync(int? id)
+        //{
+        //    UserId = id;
+        //    Apppointment = await _context.Apppointment
+        //        .Include(a => a.Vaccine)
+        //        .Include(a => a.User).Where(a => a.UserId == UserId).ToListAsync();
+        //}
     }
 }

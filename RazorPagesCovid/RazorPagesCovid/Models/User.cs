@@ -36,5 +36,9 @@ namespace RazorPagesCovid.Models
         public string FullName {
             get { return $"{UserId} {FirstName} {LastName}"; }
 		}
+        public override string ToString()
+        {
+            return $"{UserId} {FirstName} {LastName}";
+		}
     }
 }
