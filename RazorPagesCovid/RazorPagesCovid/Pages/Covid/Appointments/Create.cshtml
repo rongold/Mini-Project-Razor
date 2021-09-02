@@ -1,4 +1,4 @@
-﻿@page
+@page
 @model RazorPagesCovid.Pages.Covid.Appointments.CreateModel
 
 @{
@@ -27,6 +27,7 @@
                 <label asp-for="Apppointment.Vaccine.VaccineName" class="control-label"></label>
                 <select asp-for="Apppointment.VaccineId" class ="form-control" asp-items="ViewBag.VaccineId"></select>
             </div>
+
             <div class="form-group">
                 <label asp-for="Apppointment.user.FullName" class="control-label"></label>
                 <select asp-for="Apppointment.UserId" class ="form-control" asp-items="ViewBag.UserId"></select>

@@ -8,7 +8,17 @@
 <h1>Index</h1>
 
 <p>
-    <a asp-page="Create">Create New</a>
+	@if (Model.UserId != null)
+	{
+		if (Model.Apppointment.Where(u => u.UserId == Model.UserId).Count() < 2)
+		{
+			<a asp-route-userId="@Model.UserId" asp-page-handler="User" asp-page="Create">Create New</a>
+		}
+	}
+	else
+	{
+		<a asp-page="Create">Create New</a>
+	}
 </p>
 
 <form>

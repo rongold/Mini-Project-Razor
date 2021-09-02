@@ -12,17 +12,22 @@ namespace RazorPagesCovid.Pages.Covid.Appointments
 {
     public class CreateModel : PageModel
     {
-        private readonly RazorPagesCovid.Data.RazorPagesCovidContext _context;
-
-        public CreateModel(RazorPagesCovid.Data.RazorPagesCovidContext context)
+        private readonly RazorPagesCovidContext _context;
+        public CreateModel(RazorPagesCovidContext context)
         {
             _context = context;
         }
-
         public IActionResult OnGet()
         {
         ViewData["VaccineId"] = new SelectList(_context.Set<Vaccine>(), "VaccineId", "VaccineName");
         ViewData["UserId"] = new SelectList(_context.Set<User>(), "UserId", "FullName");
+            return Page();
+        }
+
+        public IActionResult OnGetUser(int? userId)
+        {
+            ViewData["VaccineId"] = new SelectList(_context.Set<Vaccine>(), "VaccineId", "VaccineName");
+            ViewData["UserId"] = new SelectList(_context.Set<User>().Where(u => u.UserId == userId).ToList(), "UserId", "UserId");
             return Page();
         }
 
