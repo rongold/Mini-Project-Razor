@@ -68,12 +68,21 @@
             <td>
                 @Html.DisplayFor(modelItem => item.UserId)
             </td>
-            <td>
+            @if (item.NextDateOfAppointment > DateTime.Today.Date)
+            {
+                <td class="ChangeRed">
+                    @Html.DisplayFor(modelItem => item.NextDateOfAppointment)
+                </td>
+            }
+            else 
+            { 
+            <td class="ChangeGreen">
                 @Html.DisplayFor(modelItem => item.NextDateOfAppointment)
             </td>
+            }
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.AppointmentId">Edit</a> 
-                <a asp-page="./Details" asp-route-id="@item.AppointmentId">Details</a> 
+                <a asp-page="./Edit" asp-route-id="@item.AppointmentId">Edit</a>
+                <a asp-page="./Details" asp-route-id="@item.AppointmentId">Details</a>
                 <a asp-page="./Delete" asp-route-id="@item.AppointmentId">Delete</a>
             </td>
         </tr>

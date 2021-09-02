@@ -144,3 +144,10 @@ body {
     background: #009688;
     width:fit-content;
 }
+
+.ChangeRed {
+    background-color : red;
+}
+.ChangeGreen {
+    background-color: green;
+}

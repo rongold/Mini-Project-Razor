@@ -15,7 +15,7 @@ namespace RazorPagesCovid.Models
         [Display(Name = "Date of Appointment"), DataType(DataType.Date)]
         public DateTime DateOfAppointment { get; set; }
 
-        [Display(Name = "Minium wait of next Appointment"), DataType(DataType.Date)]
+        [Display(Name = "Minimum wait of next Appointment"), DataType(DataType.Date)]
         public DateTime NextDateOfAppointment => DateOfAppointment.AddDays(60);
 
         [Display(Name = "Vaccine"), Required]
