@@ -33,6 +33,8 @@ namespace RazorPagesCovid.Models
 		[DataType(DataType.PhoneNumber)]
 		public int PhoneNumber { get; set; }
 
-
-	}
+        public string FullName {
+            get { return $"{UserId} {FirstName} {LastName}"; }
+		}
+    }
 }
