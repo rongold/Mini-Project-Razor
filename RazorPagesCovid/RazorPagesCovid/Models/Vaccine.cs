@@ -8,16 +8,16 @@ namespace RazorPagesCovid.Models
     {
         [Key]
         public int VaccineId { get; set; }
-        [Required]
-        [Display(Name = "Vaccine Name")]
+        
+        [Display(Name = "Vaccine Name"), Required]
         public string VaccineName { get; set; }
 
-        [DataType(DataType.Date)]
-        [Display(Name = "Date of Release")]
+        
+        [Display(Name = "Date of Release"), DataType(DataType.Date)]
         public DateTime DateOfRelease { get; set; }
 
-        [Required]
-        [Display(Name = "Company Name")]
+        
+        [Display(Name = "Company Name"), Required]
         public string CompanyName { get; set; }
 
 
