@@ -9,7 +9,7 @@ namespace RazorPagesCovid.Models
         [Key]
         public int AppointmentId { get; set; }
 
-        [Required,StringLength(1000),RegularExpression(@"^[A-Z]+[a-zA-Z\s]*$")]
+        [Required,StringLength(1000, MinimumLength = 1),RegularExpression(@"^[A-Z]+[a-zA-Z\s]*$", ErrorMessage = "Requires a Capital letter at the begining and can only contain letters, Minimum Length is 1")]
         public string Location { get; set; }
 
         [Display(Name = "Date of Appointment"), DataType(DataType.Date)]
