@@ -49,6 +49,84 @@ namespace RazorPagesCovid.Models
                         DateOfRelease = new DateTime(2020, 12, 30)
                     }
                 );
+
+                context.SaveChanges();
+
+                context.User.AddRange(
+
+                    new User 
+                    {
+                        FirstName = "Dumble"
+                        ,LastName = "Door"
+                        ,Age = 78
+                        ,HouseNumber = "123"
+                        ,PhoneNumber = "0794453234"
+                        ,StreetName = "tewewt"
+                        ,PostCode = "LT3 3TT"
+                    },
+                        new User
+                        {
+                            FirstName = "Gan"
+                        ,
+                            LastName = "Dalf"
+                        ,
+                            Age = 90
+                        ,
+                            HouseNumber = "123"
+                        ,
+                            PhoneNumber = "079445499"
+                        ,
+                            StreetName = "Omega Land"
+                        ,
+                            PostCode = "LW3 3TT"
+                        },
+
+                         new User
+                         {
+                             FirstName = "Super"
+                        ,
+                             LastName = "Mario"
+                        ,
+                             Age = 27
+                        ,
+                             HouseNumber = "12"
+                        ,
+                             PhoneNumber = "0788453134"
+                        ,
+                             StreetName = "Mushroom Kingdom"
+                        ,
+                             PostCode = "PW3 3DD"
+                         }
+
+                    );
+
+                context.SaveChanges();
+
+                context.Apppointment.AddRange(
+
+                    new Apppointment
+                    { 
+                        DateOfAppointment = new DateTime(2021, 09, 22)
+                        , UserId = 6
+                        , Location = "Mars"
+                        , VaccineId = 3
+                    },
+
+                       new Apppointment
+                       {
+                           DateOfAppointment = new DateTime(2021, 08, 22)
+                        ,
+                           UserId = 7
+                        ,
+                           Location = "Uranus"
+                        ,
+                           VaccineId = 2
+                       }
+
+
+                    );
+
+
                 context.SaveChanges();
             }
         }

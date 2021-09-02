@@ -20,7 +20,7 @@ namespace RazorPagesCovid.Pages.Covid.Appointments
         public IActionResult OnGet()
         {
         ViewData["VaccineId"] = new SelectList(_context.Set<Vaccine>(), "VaccineId", "VaccineName");
-        ViewData["UserId"] = new SelectList(_context.Set<User>(), "UserId", "UserId");
+        ViewData["UserId"] = new SelectList(_context.Set<User>(), "UserId", "FullName");
             return Page();
         }
 
