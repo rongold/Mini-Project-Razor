@@ -33,6 +33,8 @@ namespace RazorPagesCovid.Models
 		[Display(Name = "Phone Number"), Required,DataType(DataType.PhoneNumber), RegularExpression(@"\(?\d{4}\)?-? *\d{3}-? *-?\d{4}|^\+(?:[0-9] ?){6,14}[0-9]$", ErrorMessage = "Requires Solution to be in the form of +44XXXXXXXXX or 07XXXXXXXXXX and only contain numbers")]
 		public string PhoneNumber { get; set; }
 
-
-	}
+        public string FullName {
+            get { return $"{UserId} {FirstName} {LastName}"; }
+		}
+    }
 }
