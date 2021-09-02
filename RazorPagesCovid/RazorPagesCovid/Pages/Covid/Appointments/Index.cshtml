@@ -47,6 +47,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Apppointment[0].UserId)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apppointment[0].NextDateOfAppointment)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -65,9 +68,21 @@
             <td>
                 @Html.DisplayFor(modelItem => item.UserId)
             </td>
+            @if (item.NextDateOfAppointment > DateTime.Today.Date)
+            {
+                <td class="ChangeRed">
+                    @Html.DisplayFor(modelItem => item.NextDateOfAppointment)
+                </td>
+            }
+            else 
+            { 
+            <td class="ChangeGreen">
+                @Html.DisplayFor(modelItem => item.NextDateOfAppointment)
+            </td>
+            }
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.AppointmentId">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.AppointmentId">Details</a> |
+                <a asp-page="./Edit" asp-route-id="@item.AppointmentId">Edit</a>
+                <a asp-page="./Details" asp-route-id="@item.AppointmentId">Details</a>
                 <a asp-page="./Delete" asp-route-id="@item.AppointmentId">Delete</a>
             </td>
         </tr>
