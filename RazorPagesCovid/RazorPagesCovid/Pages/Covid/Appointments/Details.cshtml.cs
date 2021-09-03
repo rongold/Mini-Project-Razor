@@ -30,7 +30,7 @@ namespace RazorPagesCovid.Pages.Covid.Appointments
 
             Apppointment = await _context.Apppointment
                 .Include(a => a.Vaccine)
-                .Include(a => a.user).FirstOrDefaultAsync(m => m.AppointmentId == id);
+                .Include(a => a.User).FirstOrDefaultAsync(m => m.AppointmentId == id);
 
             if (Apppointment == null)
             {

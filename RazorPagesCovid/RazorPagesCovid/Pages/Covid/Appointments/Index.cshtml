@@ -45,7 +45,7 @@
                 @Html.DisplayNameFor(model => model.Apppointment[0].Vaccine)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Apppointment[0].UserId)
+                @Html.DisplayNameFor(model => model.Apppointment[0].User)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Apppointment[0].NextDateOfAppointment)
@@ -63,10 +63,10 @@
                 @Html.DisplayFor(modelItem => item.DateOfAppointment)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.VaccineId)
+                @Html.DisplayFor(modelItem => item.Vaccine.VaccineName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.UserId)
+                @Html.DisplayFor(modelItem => item.User.FullName)
             </td>
             @if (item.NextDateOfAppointment > DateTime.Today.Date)
             {
