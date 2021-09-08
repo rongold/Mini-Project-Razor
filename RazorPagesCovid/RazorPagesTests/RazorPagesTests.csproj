@@ -93,24 +93,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppConfigReader.cs" />
-    <Compile Include="BDD\SigninSteps.cs" />
     <Compile Include="BDD\UserTestSceneriosSteps.cs" />
     <Compile Include="lib\driver_config\DriverConfig.cs" />
     <Compile Include="lib\pages\UserPage.cs" />
     <Compile Include="lib\pages\HomePage.cs" />
     <Compile Include="lib\Website.cs" />
-    <Compile Include="lib\SauceDemo_Website.cs" />
-    <Compile Include="lib\driver_config\SeleniumDriverConfig.cs" />
-    <Compile Include="lib\pages\SauceDemo_HomePage.cs" />
-    <Compile Include="lib\pages\SauceDemo_SigninPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tests\SauceDemo_Signin_Tests.cs" />
-    <Compile Include="utilities\Credentials.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="BDD\SigninFeature.feature" />
     <None Include="BDD\User.feature" />
     <None Include="packages.config" />
   </ItemGroup>

@@ -1,13 +1,6 @@
 ﻿using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SeleniumWalkthrough.lib.pages;
-using SeleniumWalkthrough.lib.driver_config;
-using RazorPagesTests.lib.pages;
 using RazorPagesTests.lib.driver_config;
+using RazorPagesTests.lib.pages;
 
 namespace RazorPagesTests.lib
 {

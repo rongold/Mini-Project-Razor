@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Configuration;
 
 namespace RazorPagesTests
 {
@@ -14,10 +9,5 @@ namespace RazorPagesTests
         public static readonly string AppointmentsURL = ConfigurationManager.AppSettings["appointments_url"];
         public static readonly string VaccinesURL = ConfigurationManager.AppSettings["vaccines_url"];
         public static readonly string PrivacyURL = ConfigurationManager.AppSettings["privacy_url"];
-
-
-        //Please Delete
-        public static readonly string SignInPageUrl = ConfigurationManager.AppSettings["base_url"];
-        public static readonly string InventoryPageUrl = ConfigurationManager.AppSettings["inventory_url"];
     }
 }
