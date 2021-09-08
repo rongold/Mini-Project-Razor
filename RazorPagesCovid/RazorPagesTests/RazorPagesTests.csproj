@@ -93,6 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppConfigReader.cs" />
+    <Compile Include="BDD\HomePageSteps.cs" />
     <Compile Include="BDD\UserTestSceneriosSteps.cs" />
     <Compile Include="lib\driver_config\DriverConfig.cs" />
     <Compile Include="lib\pages\UserPage.cs" />
@@ -103,6 +104,7 @@
   <ItemGroup />
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="BDD\HomePage.feature" />
     <None Include="BDD\User.feature" />
     <None Include="packages.config" />
   </ItemGroup>
