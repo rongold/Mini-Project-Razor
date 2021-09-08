@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using RazorPagesTests;
 using SeleniumWalkthrough.utilities;
 using System;
 using System.Collections.Generic;
