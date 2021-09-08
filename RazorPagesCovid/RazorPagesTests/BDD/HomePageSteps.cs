@@ -1,15 +1,17 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium.Chrome;
-using RazorPagesCovidTests.lib;
+using RazorPagesTests.lib;
 using System;
 using TechTalk.SpecFlow;
 
-namespace RazorPagesCovidTests.BDD
+
+namespace RazorPagesTests.BDD
 {
     [Binding]
     public class HomePageSteps
     {
         private Website<ChromeDriver> _website = new Website<ChromeDriver>();
+
         [Given(@"I am on the homepage")]
         public void GivenIAmOnTheHomepage()
         {
@@ -25,7 +27,7 @@ namespace RazorPagesCovidTests.BDD
         [Then(@"I go to the vaccinepage")]
         public void ThenIGoToTheVaccinepage()
         {
-            Assert.That(_website.Driver.Url,Is.EqualTo("https://localhost:44328/Covid/Vaccines"));
+            Assert.That(_website.Driver.Url, Is.EqualTo("https://localhost:44328/Covid/Vaccines"));
         }
     }
 }

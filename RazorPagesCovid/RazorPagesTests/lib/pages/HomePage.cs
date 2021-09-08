@@ -1,11 +1,6 @@
 ﻿using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace RazorPagesCovidTests.lib.pages
+namespace RazorPagesTests.lib.pages
 {
     class HomePage
     {
@@ -25,7 +20,6 @@ namespace RazorPagesCovidTests.lib.pages
         public void GoToHomePage() => Driver.Navigate().GoToUrl(_url);
         public string GetCurrentUrl() => Driver.Url;
         public void ClickOurVaccineButton() => _vaccineButton.Click();
-        
         #endregion
     }
 }

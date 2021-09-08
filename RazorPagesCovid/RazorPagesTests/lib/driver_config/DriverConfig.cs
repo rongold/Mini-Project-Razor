@@ -1,13 +1,9 @@
 ﻿using OpenQA.Selenium;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace RazorPagesCovidTests.lib.driver_config
+namespace RazorPagesTests.lib.driver_config
 {
-    class DriverConfig<T> where T  : IWebDriver, new()
+    class DriverConfig<T> where T : IWebDriver, new()
     {
         public IWebDriver Driver { get; set; }
 
@@ -16,7 +12,6 @@ namespace RazorPagesCovidTests.lib.driver_config
             Driver = new T();
             DriverSetUp(pageLoadInSecs, implicitWaitInSecs);
         }
-
         private void DriverSetUp(int pageLoadInSecs, int implicitWaitInSecs)
         {
             Driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(pageLoadInSecs);

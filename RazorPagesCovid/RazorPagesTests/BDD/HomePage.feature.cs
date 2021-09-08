@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace RazorPagesCovidTests.BDD
+namespace RazorPagesTests.BDD
 {
     using TechTalk.SpecFlow;
     using System;
