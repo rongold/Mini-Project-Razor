@@ -96,6 +96,8 @@
     <Compile Include="BDD\HomePageSteps.cs" />
     <Compile Include="BDD\UserTestSceneriosSteps.cs" />
     <Compile Include="lib\driver_config\DriverConfig.cs" />
+    <Compile Include="lib\pages\AppointmentsCreatePage.cs" />
+    <Compile Include="lib\pages\AppointmentsPage.cs" />
     <Compile Include="lib\pages\UserPage.cs" />
     <Compile Include="lib\pages\HomePage.cs" />
     <Compile Include="lib\Website.cs" />
