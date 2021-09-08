@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RazorPagesCovidTests
 {
-    public class AppConfigReader
+    class AppConfigReader
     {
         public static readonly string HomePageUrl = ConfigurationManager.AppSettings["home_url"];
         public static readonly string UsersURL = ConfigurationManager.AppSettings["users_url"];

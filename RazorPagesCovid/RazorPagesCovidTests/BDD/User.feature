@@ -1,9 +1,7 @@
-﻿Feature: User
-	Simple calculator for adding two numbers
+﻿Feature: User Test Scenerios
+	Covers all tests on the user page
 
-@mytag
-Scenario: Add two numbers
-	Given the first number is 50
-	And the second number is 70
-	When the two numbers are added
-	Then the result should be 120
+@CheckUserPage
+Scenario: Loading Userpage displays userpage
+	Given I am on the Userpage
+	Then The page url will be Correct "https://localhost:44328/Covid/Users" and title will be users "Users"

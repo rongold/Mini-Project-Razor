@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31410.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RazorPagesCovid", "RazorPagesCovid\RazorPagesCovid.csproj", "{3FDC02E4-D6B6-48FD-BB3D-B8E41D2AF6DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorPagesCovidTests", "RazorPagesCovidTests\RazorPagesCovidTests.csproj", "{097576D7-9640-444A-93D2-83C33BB69FAE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorPagesCovidTests", "RazorPagesCovidTests\RazorPagesCovidTests.csproj", "{CA86BAB6-070F-4374-B65E-C5E85DEFA77F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{3FDC02E4-D6B6-48FD-BB3D-B8E41D2AF6DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3FDC02E4-D6B6-48FD-BB3D-B8E41D2AF6DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3FDC02E4-D6B6-48FD-BB3D-B8E41D2AF6DE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{097576D7-9640-444A-93D2-83C33BB69FAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{097576D7-9640-444A-93D2-83C33BB69FAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{097576D7-9640-444A-93D2-83C33BB69FAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{097576D7-9640-444A-93D2-83C33BB69FAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA86BAB6-070F-4374-B65E-C5E85DEFA77F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA86BAB6-070F-4374-B65E-C5E85DEFA77F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA86BAB6-070F-4374-B65E-C5E85DEFA77F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA86BAB6-070F-4374-B65E-C5E85DEFA77F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
