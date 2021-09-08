@@ -55,15 +55,15 @@ namespace RazorPagesCovid.Pages.Covid.Appointments
 
             GetAppointments = new SelectList(await VaccineNames.Distinct().ToListAsync());
             Apppointment = await getPeopleNames.Include(a => a.Vaccine)
-                .Include(a => a.user).Where(a => a.UserId == UserId).ToListAsync();
+                .Include(a => a.User).Where(a => a.UserId == UserId).ToListAsync();
         }
 
-        //public async Task OnGetUserAsync(int? id)
-        //{
-        //    UserId = id;
-        //    Apppointment = await _context.Apppointment
-        //        .Include(a => a.Vaccine)
-        //        .Include(a => a.User).Where(a => a.UserId == UserId).ToListAsync();
-        //}
-    }
+		public async Task OnGetUserAsync(int? id)
+		{
+			UserId = id;
+			Apppointment = await _context.Apppointment
+				.Include(a => a.Vaccine)
+				.Include(a => a.User).Where(a => a.UserId == UserId).ToListAsync();
+		}
+	}
 }
