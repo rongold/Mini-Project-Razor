@@ -26,6 +26,7 @@ namespace RazorPagesTests.lib.pages
         private IWebElement StreetNameDropDownMenu => DataHeaderContainer.FindElement(By.XPath("/html/body/div/main/form/p/select"));
         private IList<IWebElement> StreetNameDropDownMenuFields => StreetNameDropDownMenu.FindElements(By.TagName("option"));
         private IWebElement FilterButton => DataHeaderContainer.FindElement(By.XPath("/html/body/div/main/form/p/input[2]"));
+        private IWebElement CreateButton => Driver.FindElement(By.XPath("/html/body/div/main/div[1]/div/form/div[8]/input"));
         private IList<IWebElement> DataLinks(int index) => DataHeaders[index].FindElements(By.TagName("a"));
 
         #endregion
@@ -40,8 +41,9 @@ namespace RazorPagesTests.lib.pages
 
         public IWebElement GetDataByIndex(int index) => DataElements[index];
         public string GetHeaderByIndex(int index) => DataHeaders[index].Text;
-        public void ClickEditByIndex(int index) => DataLinks(index)[1].Click();
+        //public void ClickEditByIndex(int index) => DataHeaders(index)[1].Click();
         public void ClickFirstEdit() => FirstEdit.Click();
+        public void ClickCreateButton() => CreateButton.Click();
         public void ClickFilterButton() => FilterButton.Click();
         public void ClickFirstDetails() => FirstDetails.Click();
         public void ClickFirstAppointment() => FirstAppointment.Click();
@@ -52,6 +54,17 @@ namespace RazorPagesTests.lib.pages
 
 
         #endregion
+
+        #region errors
+
+        public string GetErrorTextByIndex(int index) => Driver.FindElement(By.XPath($"/html/body/div/main/div[1]/div/form/div[{index}]/span/span")).Text;
+        public string FirstNameError => Driver.FindElement(By.XPath("/html/body/div/main/div[1]/div/form/div[1]/span/span")).Text;
+        public string LastNameError => Driver.FindElement(By.XPath("/html/body/div/main/div[1]/div/form/div[2]/span/span")).Text;
+        public string AgeError => Driver.FindElement(By.XPath("/html/body/div/main/div[1]/div/form/div[3]/span/span")).Text;
+        public string HouseNumbeError => Driver.FindElement(By.XPath("/html/body/div/main/div[1]/div/form/div[4]/span/span")).Text;
+        public string StreetNumberError => Driver.FindElement(By.XPath("/html/body/div/main/div[1]/div/form/div[5]/span/span")).Text;
+        public string PostcodeError => Driver.FindElement(By.XPath("/html/body/div/main/div[1]/div/form/div[6]/span/span")).Text;
+        public string PhoneNumberErrorError => Driver.FindElement(By.XPath("/html/body/div/main/div[1]/div/form/div[7]/span/span")).Text;
+        #endregion
     }
 }
-

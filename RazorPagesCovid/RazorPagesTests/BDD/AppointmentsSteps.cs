@@ -10,6 +10,8 @@ namespace RazorPagesTests.BDD
     public class AppointmentsSteps
     {
         private Website<ChromeDriver> _website = new Website<ChromeDriver>();
+        //[BeforeScenario]
+
 
         [Given(@"I am on the Homepage")]
         public void GivenIAmOnTheHomepage()
@@ -42,14 +44,12 @@ namespace RazorPagesTests.BDD
             _website.AppointmentsPage.ClickCreateNew();
         }
 
+
         [Then(@"I should view (.*)")]
         public void ThenIShouldView(string content)
         {
             Assert.That(_website.AppointmentsPage.Content(), Does.Contain(content));
         }
-
-
-
 
         [AfterScenario]
         public void QuitWebDriver()
