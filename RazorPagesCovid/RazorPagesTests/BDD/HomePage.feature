@@ -1,5 +1,15 @@
 ﻿Feature: HomePage
 	Accessing other pages through links in the navbar
+@happy 
+Scenario: Staying On Homepage
+Given I am on the homepage
+When I click the homepage button
+Then I should stay on the homepage
+@happy
+Scenario: Staying on Homepage 2
+Given I am on the homepage
+When I click the razorpage button
+Then I should stay on the homepage
 
 @happy
 Scenario: Viewing Vaccines
@@ -14,13 +24,13 @@ When I click the Users Button
 Then I go to the Users page
 
 @happy
-Scenario: View Appointment
+Scenario: Viewing Appointment
 Given I am on the homepage
 When I click the appointments button
 Then I go to the appointments page
 
 @happy
-Scenario: View Privacy
+Scenario: Viewing Privacy
 Given I am on the homepage
 When I click the privacy button
 Then I go to the privacy page

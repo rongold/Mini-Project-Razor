@@ -17,7 +17,25 @@ namespace RazorPagesTests.BDD
         {
             _website.HomePage.GoToHomePage();
         }
-        
+
+        [When(@"I click the homepage button")]
+        public void WhenIClickTheHomepageButton()
+        {
+            _website.HomePage.ClickHomePageButton();
+        }
+
+        [Then(@"I should stay on the homepage")]
+        public void ThenIShouldStayOnTheHomepage()
+        {
+            Assert.That(_website.Driver.Url, Is.EqualTo("https://localhost:44328/"));
+        }
+
+        [When(@"I click the razorpage button")]
+        public void WhenIClickTheRazorpageButton()
+        {
+            _website.HomePage.ClickRazorPagesCovidButton();
+        }
+
         [When(@"I click the vaccine link")]
         public void WhenIClickTheVaccineLink()
         {
