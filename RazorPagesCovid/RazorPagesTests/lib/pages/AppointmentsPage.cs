@@ -27,7 +27,7 @@ namespace RazorPagesTests.lib.pages
         #region methods
         public string GetUrl() => _url;
         public void VistitPageByURL() => Driver.Navigate().GoToUrl(_url);
-        public void VistitPageByNavBar() => _appointementsButton.Click();
+        public void AppointmentstPageByNavBar() => _appointementsButton.Click();
         public void CreateAppointment() => _createNewButton.Click();
         public void SelectDropDownForVaccines() => _vaccineSelectionDropDown.Click();
         public void SelectAllVacines() => _allVaccineSelection.Click();
