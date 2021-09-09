@@ -95,6 +95,7 @@
     <Compile Include="AppConfigReader.cs" />
     <Compile Include="BDD\AppointmentsSteps.cs" />
     <Compile Include="BDD\HomePageSteps.cs" />
+    <Compile Include="BDD\AppointmentsCreateSteps.cs" />
     <Compile Include="BDD\UserTestSceneriosSteps.cs" />
     <Compile Include="lib\driver_config\DriverConfig.cs" />
     <Compile Include="lib\pages\AppointmentsCreatePage.cs" />
@@ -109,6 +110,7 @@
     <None Include="app.config" />
     <None Include="BDD\Appointments.feature" />
     <None Include="BDD\HomePage.feature" />
+    <None Include="BDD\AppointmentsCreate.feature" />
     <None Include="BDD\User.feature" />
     <None Include="packages.config" />
   </ItemGroup>

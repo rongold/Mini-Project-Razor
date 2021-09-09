@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using System.Collections.Generic;
 
 namespace RazorPagesTests.lib.pages
 {
@@ -15,6 +16,11 @@ namespace RazorPagesTests.lib.pages
         private string _url_App = AppConfigReader.AppointmentsURL;
 
         private IWebElement Title => Driver.FindElement(By.XPath("/html/body/div/main/h1"));
+        private IWebElement  Location => Driver.FindElement(By.XPath("/html/body/div/main/table/thead/tr/th[1]"));
+        private IWebElement  Date => Driver.FindElement(By.XPath("/html/body/div/main/table/thead/tr/th[2]"));
+        private IWebElement  Vaccine => Driver.FindElement(By.XPath("/html/body/div/main/table/thead/tr/th[3]"));
+        private IWebElement  User => Driver.FindElement(By.XPath("/html/body/div/main/table/thead/tr/th[4]"));
+        private IWebElement  Wait => Driver.FindElement(By.XPath("/html/body/div/main/table/thead/tr/th[5]"));
         private IWebElement AppointementsButton => Driver.FindElement(By.XPath("/html/body/header/nav/div/div/ul/li[3]/a"));
         private IWebElement CreateNewButton => Driver.FindElement(By.XPath("/html/body/div/main/p/a"));
         private IWebElement VaccineSelectionDropDown => Driver.FindElement(By.XPath("/html/body/div/main/form/p/select"));
@@ -35,6 +41,18 @@ namespace RazorPagesTests.lib.pages
         public void ClickCreateNew() => CreateNewButton.Click();
         public string GetTitleValue() => Title.Text;
 
+        public List<string> Content()
+        {
+            var list = new List<string>()
+            {
+                Location.Text,
+                Date.Text,
+                Vaccine.Text,
+                User.Text,
+                Wait.Text
+            };
+            return list;
+        }
         public void AppointmentstPageByNavBar() => AppointementsButton.Click();
         public void SelectDropDownForVaccines() => VaccineSelectionDropDown.Click();
         public void SelectAllVacines() => AllVaccineSelection.Click();
