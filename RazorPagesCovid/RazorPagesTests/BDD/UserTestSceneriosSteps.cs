@@ -42,6 +42,31 @@ namespace RazorPagesCovidTests.BDD
             _website.UserPage.ClickFirstAppointment();
         }
 
+        [When(@"I enter information (.*) into the search field")]
+        public void WhenIEnterInformationIntoTheSearchField(string input)
+        {
+            _website.UserPage.EnterIntoInputField(input);
+            _website.UserPage.ClickFilterButton();
+        }
+
+        [When(@"I choose option (.*) from the dropdown Menu")]
+        public void WhenIChooseOptionFromTheDropdownMenu(int index)
+        {
+            _website.UserPage.SelectStreetNameMenuFieldFromIndex(index);
+        }
+
+        [When(@"Click the Filter Button")]
+        public void WhenClickTheFilterButton()
+        {
+            _website.UserPage.ClickFilterButton();
+        }
+
+
+        [Then(@"i will see this (.*) of users")]
+        public void ThenIWillSeeThisOfUsers(int quant)
+        {
+            Assert.That(_website.UserPage.GetCountOfUserData, Is.EqualTo(quant));
+        }
 
         [Then(@"The page url will be Correct ""(.*)"" and title will be users ""(.*)""")]
         public void ThenThePageUrlWillBeCorrectAndTitleWillBeUsers(string url, string title)

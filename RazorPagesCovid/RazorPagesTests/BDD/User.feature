@@ -44,3 +44,30 @@ Scenario: Click appointment brings me to first user appointment page
 	Given I am on the Userpage
 	When I click Appointment
 	Then The page url will be Correct "https://localhost:44328/Covid/Appointments?id=1&handler=User" and title will be users "Appointment"
+
+@UserSearch
+Scenario: Searching user details brings up correct searches
+	Given I am on the Userpage
+	When I enter information <Input> into the search field
+	Then i will see this <Quantity> of users
+Examples:
+    | Input		  | Quantity |
+    | Super		  | 1		 |
+    | Mario		  | 1		 |
+    | Super Mario | 1		 |
+    | Mushroom    | 1		 |
+    | PW3 3DD     | 1		 |
+    | 0788453134  | 1		 |
+
+@UserDropdownMenu
+Scenario: Filtering Users by Drop Down Menu
+	Given I am on the Userpage
+	When I choose option <Option> from the dropdown Menu
+	And Click the Filter Button
+	Then i will see this <Quantity> of users
+Examples:
+    | Option	| Quantity |
+    | 0     | 3		   |
+    | 1	    | 1		   |
+    | 2	    | 1		   |
+    | 3	    | 1		   |
