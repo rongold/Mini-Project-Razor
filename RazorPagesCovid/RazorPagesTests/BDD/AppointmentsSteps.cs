@@ -23,15 +23,15 @@ namespace RazorPagesTests.BDD
             _website.AppointmentsPage.AppointmentstPageByNavBar();
         }
 
-        [Then(@"The AppointmentPage url will be Correct ""(.*)"" and title will be users ""(.*)""")]
-        public void ThenTheAppointmentPageUrlWillBeCorrectAndTitleWillBeUsers(string url, string title)
+        [Then(@"The AppointmentPage url will be Correct ""(.*)"" and title will be ""(.*)""")]
+        public void ThenTheAppointmentPageUrlWillBeCorrectAndTitleWillBe(string url, string title)
         {
             Assert.That(_website.AppointmentsPage.GetCurrentUrl, Is.EqualTo(url));
             Assert.That(_website.AppointmentsPage.GetTitleValue, Is.EqualTo(title));
         }
 
-        [Given(@"I am on the AppointmentPage")]
-        public void GivenIAmOnTheAppointmentPage()
+        [Given(@"I am on the AppointmentsPage")]
+        public void GivenIAmOnTheAppointmentsPage()
         {
             _website.AppointmentsPage.VistitPageByURL();
         }
@@ -42,12 +42,24 @@ namespace RazorPagesTests.BDD
             _website.AppointmentsPage.ClickCreateNew();
         }
 
+        [Then(@"I should view (.*)")]
+        public void ThenIShouldView(string content)
+        {
+            Assert.That(_website.AppointmentsPage.Content(), Does.Contain(content));
+        }
+
+
 
 
         [AfterScenario]
-        public void DisposeWebDriver()
+        public void QuitWebDriver()
         {
             _website.Driver.Quit();
+        }
+
+        [OneTimeTearDown]
+        public void DisposeWebDriver()
+        {
             _website.Driver.Dispose();
         }
     }

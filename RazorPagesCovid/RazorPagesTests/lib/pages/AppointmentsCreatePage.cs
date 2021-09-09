@@ -21,16 +21,24 @@ namespace RazorPagesTests.lib.pages
         private IWebElement DateOfAppointment => Driver.FindElement(By.XPath("/html/body/div/main/div[1]/div/form/div[2]/label"));
         private IWebElement VaccineName => Driver.FindElement(By.XPath("/html/body/div/main/div[1]/div/form/div[3]/label"));
         private IWebElement FullName => Driver.FindElement(By.XPath("/html/body/div/main/div[1]/div/form/div[4]/label"));
-        //private IWebElement _appointementsButton => Driver.FindElement(By.XPath("/html/body/header/nav/div/div/ul/li[3]/a"));
-        //private IWebElement _createNewButton => Driver.FindElement(By.XPath("/html/body/div/main/p/a"));
-        //private IWebElement _vaccineSelectionDropDown => Driver.FindElement(By.XPath("/html/body/div/main/form/p/select"));
+        private IWebElement LocationBar => Driver.FindElement(By.XPath("/html/body/div/main/div[1]/div/form/div[1]/input"));
+        private IWebElement LocationError => Driver.FindElement(By.Id("Apppointment_Location-error"));
+        private IWebElement DateBar => Driver.FindElement(By.XPath("/html/body/div/main/div[1]/div/form/div[2]/input"));
+        private IWebElement DateError => Driver.FindElement(By.Id("Apppointment_DateOfAppointment-error"));
+        private IWebElement VaccineDropDown => Driver.FindElement(By.XPath("/html/body/div/main/div[1]/div/form/div[3]/select"));
+        private IWebElement NameDropDown => Driver.FindElement(By.XPath("/html/body/div/main/div[1]/div/form/div[4]/select"));
+        private IWebElement CreateButton => Driver.FindElement(By.XPath("/html/body/div/main/div[1]/div/form/div[5]/input"));
+        private IWebElement BackButton => Driver.FindElement(By.XPath("/html/body/div/main/div[2]/a"));
+
         #endregion
 
         #region methods
-        public List<string> CreateContent()
+        public List<string> Content()
         {
             var list = new List<string>
             {
+                Title.Text,
+                SubTitle.Text,
                 Location.Text,
                 DateOfAppointment.Text,
                 VaccineName.Text,
@@ -45,18 +53,16 @@ namespace RazorPagesTests.lib.pages
         public string GetTitleValue() => Title.Text;
         public string GetSubTitleValue() => SubTitle.Text;
 
-        
+        public void ClickCreateButton() => CreateButton.Click();
+        public void ClickBackButton() => BackButton.Click();
 
+        public void LocationBarInput(string location) => LocationBar.SendKeys(location);
+        public void DateBarInput(string ddmmyy) => DateBar.SendKeys(ddmmyy);
+        public void VaccineBarInput(string vaccine) => VaccineDropDown.SendKeys(vaccine);
+        public void NameBarInput(string name) => NameDropDown.SendKeys(name);
 
-        //public void AppointmentstPageByNavBar() => _appointementsButton.Click();
-        //public void SelectDropDownForVaccines() => _vaccineSelectionDropDown.Click();
-        //public void SelectAllVacines() => _allVaccineSelection.Click();
-        //public void SelectJohnsonNJohnsonVacines() => _jnJVaccineSelection.Click();
-        //public void SelectModernaVacines() => _modernaVaccineSelection.Click();
-        //public void SelectOxfordVacines() => _oxfordVaccineSelection.Click();
-        //public void SelectPFizerVacines() => _pFizerVaccineSelection.Click();
-        //public void InputSearchableTitle(string title) => _titleSearchBar.SendKeys(title);
-        //public void SelectFilter() => _filterButton.Click();
+        public string LocationErrorMessage() => LocationError.Text;
+        public string DateErrorMessage() => DateError.Text;
         #endregion
     }
 }

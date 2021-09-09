@@ -11,6 +11,7 @@ namespace RazorPagesTests.lib
         public HomePage HomePage { get; set; }
         public UserPage UserPage { get; set; }
         public AppointmentsPage AppointmentsPage { get; set; }
+        public AppointmentsCreatePage AppointmentsCreatePage { get; set; }
         #endregion
 
         public Website(int pageLoadInSecs = 10, int implicitWaitInSecs = 10)
@@ -19,6 +20,7 @@ namespace RazorPagesTests.lib
             HomePage = new HomePage(Driver);
             UserPage = new UserPage(Driver);
             AppointmentsPage = new AppointmentsPage(Driver);
+            AppointmentsCreatePage = new AppointmentsCreatePage(Driver);
         }
 
         public void DeletedCookies() => Driver.Manage().Cookies.DeleteAllCookies();

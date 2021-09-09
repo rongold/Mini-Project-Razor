@@ -35,7 +35,7 @@ namespace RazorPagesTests.BDD
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "BDD", "Appointments", "\tSimple calculator for adding two numbers", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "BDD", "Appointments", "\tCovers all generic appointments tests", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -110,21 +110,32 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
 #line 8
  testRunner.Then("The AppointmentPage url will be Correct \"https://localhost:44328/Covid/Appointmen" +
-                        "ts\" and title will be users \"Index\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+                        "ts\" and title will be \"Appointments\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Create new Page")]
-        [NUnit.Framework.CategoryAttribute("CreateNew")]
-        public virtual void CreateNewPage()
+        [NUnit.Framework.DescriptionAttribute("On the Appointmentspag")]
+        [NUnit.Framework.CategoryAttribute("CheckAppointmentsPage")]
+        [NUnit.Framework.TestCaseAttribute("Location", null)]
+        [NUnit.Framework.TestCaseAttribute("Date of Appointment", null)]
+        [NUnit.Framework.TestCaseAttribute("Vaccine", null)]
+        [NUnit.Framework.TestCaseAttribute("User", null)]
+        [NUnit.Framework.TestCaseAttribute("Minimum wait of next Appointment", null)]
+        public virtual void OnTheAppointmentspag(string results, string[] exampleTags)
         {
-            string[] tagsOfScenario = new string[] {
-                    "CreateNew"};
+            string[] @__tags = new string[] {
+                    "CheckAppointmentsPage"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create new Page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            argumentsOfScenario.Add("results", results);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("On the Appointmentspag", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 11
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -146,14 +157,53 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 12
- testRunner.Given("I am on the AppointmentPage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I am on the AppointmentsPage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 13
+ testRunner.Then(string.Format("I should view {0}", results), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Create new Page")]
+        [NUnit.Framework.CategoryAttribute("CreateNew")]
+        public virtual void CreateNewPage()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "CreateNew"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create new Page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 23
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 24
+ testRunner.Given("I am on the AppointmentsPage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 25
  testRunner.When("I click the CreateNew Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 14
+#line 26
  testRunner.Then("The AppointmentPage url will be Correct \"https://localhost:44328/Covid/Appointmen" +
-                        "ts/Create\" and title will be users \"Create\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+                        "ts/Create\" and title will be \"Create\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
