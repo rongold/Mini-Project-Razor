@@ -29,5 +29,13 @@ namespace RazorPagesTests.BDD
         {
             Assert.That(_website.Driver.Url, Is.EqualTo("https://localhost:44328/Covid/Vaccines"));
         }
+
+        [AfterScenario]
+        public void DisposeWebDriver()
+        {
+            _website.Driver.Quit();
+            _website.Driver.Dispose();
+        }
+
     }
 }
