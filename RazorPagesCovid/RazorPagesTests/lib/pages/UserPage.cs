@@ -34,6 +34,7 @@ namespace RazorPagesTests.lib.pages
         public void ClickCreateNew() => CreateNew.Click();
         public string GetTitleValue() => Title.Text;
 
+
         public IWebElement GetDataByIndex(int index) => DataElements[index];
         public string GetHeaderByIndex(int index) => DataHeaders[index].Text;
         public void ClickEditByIndex(int index) => DataLinks(index)[1].Click();
