@@ -30,6 +30,42 @@ namespace RazorPagesTests.BDD
             Assert.That(_website.Driver.Url, Is.EqualTo("https://localhost:44328/Covid/Vaccines"));
         }
 
+        [When(@"I click the Users Button")]
+        public void WhenIClickTheUsersButton()
+        {
+            _website.HomePage.ClickUsersButton();
+        }
+
+        [Then(@"I go to the Users page")]
+        public void ThenIGotToTheUsersPage()
+        {
+            Assert.That(_website.Driver.Url, Is.EqualTo("https://localhost:44328/Covid/Users"));
+        }
+
+        [When(@"I click the appointments button")]
+        public void WhenIClickTheAppointmentsButton()
+        {
+            _website.HomePage.ClickAppointmentButton();
+        }
+
+        [Then(@"I go to the appointments page")]
+        public void ThenIGoToTheAppointmentsPage()
+        {
+            Assert.That(_website.Driver.Url, Is.EqualTo("https://localhost:44328/Covid/Appointments"));
+        }
+        [When(@"I click the privacy button")]
+        public void WhenIClickThePrivacyButton()
+        {
+            _website.HomePage.ClickPrivacyButton();
+        }
+
+        [Then(@"I go to the privacy page")]
+        public void ThenIGoToThePrivacyPage()
+        {
+            Assert.That(_website.Driver.Url, Is.EqualTo("https://localhost:44328/Privacy"));
+        }
+
+
         [AfterScenario]
         public void QuitWebDriver()
         {
