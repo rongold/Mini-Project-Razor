@@ -10,6 +10,8 @@ namespace RazorPagesTests.BDD
     public class AppointmentsSteps
     {
         private Website<ChromeDriver> _website = new Website<ChromeDriver>();
+        //[BeforeScenario]
+
 
         [Given(@"I am on the Homepage")]
         public void GivenIAmOnTheHomepage()
@@ -42,12 +44,15 @@ namespace RazorPagesTests.BDD
             _website.AppointmentsPage.ClickCreateNew();
         }
 
-
-
         [AfterScenario]
-        public void DisposeWebDriver()
+        public void QuitWebDriver()
         {
             _website.Driver.Quit();
+        }
+
+        [OneTimeTearDown]
+        public void DisposeWebDriver()
+        {
             _website.Driver.Dispose();
         }
     }

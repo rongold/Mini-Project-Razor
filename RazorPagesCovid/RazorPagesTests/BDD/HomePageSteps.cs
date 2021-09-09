@@ -31,11 +31,15 @@ namespace RazorPagesTests.BDD
         }
 
         [AfterScenario]
-        public void DisposeWebDriver()
+        public void QuitWebDriver()
         {
             _website.Driver.Quit();
-            _website.Driver.Dispose();
         }
 
+        [OneTimeTearDown]
+        public void DisposeWebDriver()
+        {
+            _website.Driver.Dispose();
+        }
     }
 }

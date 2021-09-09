@@ -71,3 +71,19 @@ Examples:
     | 1	    | 1		   |
     | 2	    | 1		   |
     | 3	    | 1		   |
+
+@CreatingUser-SadPath
+Scenario: Creating New User With No Details Shows Errors
+	Given I am on the Userpage
+	When I click new user
+	And Submit the form with no details
+	Then It will show errors <Index> <FirstCategory> <SecondCategory>
+Examples:
+    | Index | FirstCategory | SecondCategory |
+    | 1     | First    | Name      |
+    | 2     | Last     | Name      |
+    | 3     | Age      |           |
+    | 4     | House    | Number    |
+    | 5     | Street   | Name      |
+    | 6     | Postcode |           |
+    | 7     | Phone    | Number    |

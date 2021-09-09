@@ -512,6 +512,66 @@ this.ScenarioInitialize(scenarioInfo);
             }
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Creating New User With No Details Shows Errors")]
+        [NUnit.Framework.CategoryAttribute("CreatingUser-SadPath")]
+        [NUnit.Framework.TestCaseAttribute("1", "First", "Name", null)]
+        [NUnit.Framework.TestCaseAttribute("2", "Last", "Name", null)]
+        [NUnit.Framework.TestCaseAttribute("3", "Age", "", null)]
+        [NUnit.Framework.TestCaseAttribute("4", "House", "Number", null)]
+        [NUnit.Framework.TestCaseAttribute("5", "Street", "Name", null)]
+        [NUnit.Framework.TestCaseAttribute("6", "Postcode", "", null)]
+        [NUnit.Framework.TestCaseAttribute("7", "Phone", "Number", null)]
+        public virtual void CreatingNewUserWithNoDetailsShowsErrors(string index, string firstCategory, string secondCategory, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "CreatingUser-SadPath"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("Index", index);
+            argumentsOfScenario.Add("FirstCategory", firstCategory);
+            argumentsOfScenario.Add("SecondCategory", secondCategory);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Creating New User With No Details Shows Errors", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 76
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 77
+ testRunner.Given("I am on the Userpage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 78
+ testRunner.When("I click new user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 79
+ testRunner.And("Submit the form with no details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 80
+ testRunner.Then(string.Format("It will show errors {0} {1} {2}", index, firstCategory, secondCategory), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

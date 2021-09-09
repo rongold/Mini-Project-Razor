@@ -61,6 +61,48 @@ namespace RazorPagesCovidTests.BDD
             _website.UserPage.ClickFilterButton();
         }
 
+        [When(@"I click new user")]
+        public void WhenIClickNewUser()
+        {
+            _website.UserPage.ClickCreateNew();
+        }
+
+        [When(@"Submit the form with no details")]
+        public void WhenSubmitTheFormWithNoDetails()
+        {
+            _website.UserPage.ClickCreateButton();
+        }
+
+        [Then(@"It will show errors (.*) (.*) (.*)")]
+        public void ThenItWillShowErrors(int index, string p1, string p2)
+        {
+            string expectedError;
+            if (p2 == "" || p2 == null)
+            {
+                expectedError = $"The {p1} field is required.";   
+            }
+            else
+            {
+                expectedError = $"The {p1} {p2} field is required.";
+            }
+            Assert.That(_website.UserPage.GetErrorTextByIndex(index), Is.EqualTo(expectedError));
+        }
+
+
+        [Then(@"the following errors will show (.*) (.*)")]
+        public void ThenTheFollowingErrorsWillShow(int index, string firstCatergory, string secondCatergory)
+        {
+            string expectedError;
+            if (firstCatergory == "" || firstCatergory == null)
+            {
+                expectedError = $"The {firstCatergory} {secondCatergory} field is required.";
+            }
+            else
+            {
+                expectedError = $"The {firstCatergory} field is required.";
+            }
+            Assert.That(_website.UserPage.GetErrorTextByIndex(index), Is.EqualTo(expectedError));
+        }
 
         [Then(@"i will see this (.*) of users")]
         public void ThenIWillSeeThisOfUsers(int quant)
@@ -100,12 +142,16 @@ namespace RazorPagesCovidTests.BDD
         }
 
         [AfterScenario]
-        public void DisposeWebDriver()
+        public void QuitWebDriver()
         {
             _website.Driver.Quit();
-            _website.Driver.Dispose();
         }
 
+        [OneTimeTearDown]
+        public void DisposeWebDriver()
+        {
+            _website.Driver.Dispose();
+        }
 
     }
 }
