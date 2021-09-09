@@ -17,7 +17,6 @@ namespace RazorPagesCovidTests.BDD
             _website.UserPage.VisitUserPage();
         }
 
-
         [When(@"I Click CreateUser")]
         public void WhenIClickCreateUser()
         {
