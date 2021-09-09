@@ -11,32 +11,39 @@ namespace RazorPagesTests.lib.pages
 
         #region properties
         public IWebDriver Driver { get; }
-        private string _url = AppConfigReader.AppointmentsURL;
-        private IWebElement _appointementsButton => Driver.FindElement(By.XPath("/html/body/header/nav/div/div/ul/li[3]/a"));
-        private IWebElement _createNewButton => Driver.FindElement(By.XPath("/html/body/div/main/p/a"));
-        private IWebElement _vaccineSelectionDropDown => Driver.FindElement(By.XPath("/html/body/div/main/form/p/select"));
-        private IWebElement _allVaccineSelection => Driver.FindElement(By.XPath("/html/body/div/main/form/p/select/option[1]"));
-        private IWebElement _jnJVaccineSelection => Driver.FindElement(By.XPath("/html/body/div/main/form/p/select/option[2]"));
-        private IWebElement _modernaVaccineSelection => Driver.FindElement(By.XPath("/html/body/div/main/form/p/select/option[3]"));
-        private IWebElement _oxfordVaccineSelection => Driver.FindElement(By.XPath("/html/body/div/main/form/p/select/option[4]"));
-        private IWebElement _pFizerVaccineSelection => Driver.FindElement(By.XPath("/html/body/div/main/form/p/select/option[5]"));
-        private IWebElement _titleSearchBar => Driver.FindElement(By.XPath("/html/body/div/main/form/p/input[1]"));
-        private IWebElement _filterButton => Driver.FindElement(By.XPath("/html/body/div/main/form/p/input[2]"));
+        private string _url_Home = AppConfigReader.HomePageUrl;
+        private string _url_App = AppConfigReader.AppointmentsURL;
+
+        private IWebElement Title => Driver.FindElement(By.XPath("/html/body/div/main/h1"));
+        private IWebElement AppointementsButton => Driver.FindElement(By.XPath("/html/body/header/nav/div/div/ul/li[3]/a"));
+        private IWebElement CreateNewButton => Driver.FindElement(By.XPath("/html/body/div/main/p/a"));
+        private IWebElement VaccineSelectionDropDown => Driver.FindElement(By.XPath("/html/body/div/main/form/p/select"));
+        private IWebElement AllVaccineSelection => Driver.FindElement(By.XPath("/html/body/div/main/form/p/select/option[1]"));
+        private IWebElement JnJVaccineSelection => Driver.FindElement(By.XPath("/html/body/div/main/form/p/select/option[2]"));
+        private IWebElement ModernaVaccineSelection => Driver.FindElement(By.XPath("/html/body/div/main/form/p/select/option[3]"));
+        private IWebElement OxfordVaccineSelection => Driver.FindElement(By.XPath("/html/body/div/main/form/p/select/option[4]"));
+        private IWebElement PFizerVaccineSelection => Driver.FindElement(By.XPath("/html/body/div/main/form/p/select/option[5]"));
+        private IWebElement TitleSearchBar => Driver.FindElement(By.XPath("/html/body/div/main/form/p/input[1]"));
+        private IWebElement FilterButton => Driver.FindElement(By.XPath("/html/body/div/main/form/p/input[2]"));
         #endregion
 
         #region methods
-        public string GetUrl() => _url;
-        public void VistitPageByURL() => Driver.Navigate().GoToUrl(_url);
-        public void AppointmentstPageByNavBar() => _appointementsButton.Click();
-        public void CreateAppointment() => _createNewButton.Click();
-        public void SelectDropDownForVaccines() => _vaccineSelectionDropDown.Click();
-        public void SelectAllVacines() => _allVaccineSelection.Click();
-        public void SelectJohnsonNJohnsonVacines() => _jnJVaccineSelection.Click();
-        public void SelectModernaVacines() => _modernaVaccineSelection.Click();
-        public void SelectOxfordVacines() => _oxfordVaccineSelection.Click();
-        public void SelectPFizerVacines() => _pFizerVaccineSelection.Click();
-        public void InputSearchableTitle(string title) => _titleSearchBar.SendKeys(title);
-        public void SelectFilter() => _filterButton.Click();
+        public string GetUrl() => _url_App;
+        public string GetCurrentUrl() => Driver.Url;
+        public void HomePage() => Driver.Navigate().GoToUrl(_url_Home);
+        public void VistitPageByURL() => Driver.Navigate().GoToUrl(_url_App);
+        public void ClickCreateNew() => CreateNewButton.Click();
+        public string GetTitleValue() => Title.Text;
+
+        public void AppointmentstPageByNavBar() => AppointementsButton.Click();
+        public void SelectDropDownForVaccines() => VaccineSelectionDropDown.Click();
+        public void SelectAllVacines() => AllVaccineSelection.Click();
+        public void SelectJohnsonNJohnsonVacines() => JnJVaccineSelection.Click();
+        public void SelectModernaVacines() => ModernaVaccineSelection.Click();
+        public void SelectOxfordVacines() => OxfordVaccineSelection.Click();
+        public void SelectPFizerVacines() => PFizerVaccineSelection.Click();
+        public void InputSearchableTitle(string title) => TitleSearchBar.SendKeys(title);
+        public void SelectFilter() => FilterButton.Click();
         #endregion
     }
 }

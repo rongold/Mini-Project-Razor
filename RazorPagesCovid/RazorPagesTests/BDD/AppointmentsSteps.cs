@@ -11,16 +11,44 @@ namespace RazorPagesTests.BDD
     {
         private Website<ChromeDriver> _website = new Website<ChromeDriver>();
 
-        [When(@"I click the appointments link")]
-        public void WhenIClickTheAppointmentsLink()
+        [Given(@"I am on the Homepage")]
+        public void GivenIAmOnTheHomepage()
+        {
+            _website.AppointmentsPage.HomePage();
+        }
+
+        [When(@"I click the Appointments Button")]
+        public void WhenIClickTheAppointmentsButton()
         {
             _website.AppointmentsPage.AppointmentstPageByNavBar();
         }
-        
-        [Then(@"I go to the appointmentspage")]
-        public void ThenIGoToTheAppointmentspage()
+
+        [Then(@"The AppointmentPage url will be Correct ""(.*)"" and title will be users ""(.*)""")]
+        public void ThenTheAppointmentPageUrlWillBeCorrectAndTitleWillBeUsers(string url, string title)
         {
-            Assert.That(_website.Driver.Url, Is.EqualTo("https://localhost:44328/Covid/Appointments"));
+            Assert.That(_website.AppointmentsPage.GetCurrentUrl, Is.EqualTo(url));
+            Assert.That(_website.AppointmentsPage.GetTitleValue, Is.EqualTo(title));
+        }
+
+        [Given(@"I am on the AppointmentPage")]
+        public void GivenIAmOnTheAppointmentPage()
+        {
+            _website.AppointmentsPage.VistitPageByURL();
+        }
+
+        [When(@"I click the CreateNew Button")]
+        public void WhenIClickTheCreateNewButton()
+        {
+            _website.AppointmentsPage.ClickCreateNew();
+        }
+
+
+
+        [AfterScenario]
+        public void DisposeWebDriver()
+        {
+            _website.Driver.Quit();
+            _website.Driver.Dispose();
         }
     }
 }
