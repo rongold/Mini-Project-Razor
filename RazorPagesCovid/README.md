@@ -1,6 +1,6 @@
 # Using Selenium to Test Web Pages
 
-![](Images/Project 2.JPG)
+![](https://github.com/rongold/Mini-Project-Razor/blob/dev/RazorPagesCovid/Images/Project%202.JPG)
 
 #### Introduction - Project Description
 
@@ -24,17 +24,17 @@ This Framework was built with Visual Studio 2019 and may operate differently acc
 
    or copy the Github link shown.
 
-   ![](C:\Users\Saf T-Flaire\Desktop\Sparta\Eng90\API-Mini-Project\Images\Code.JPG)
+   ![](Images/Code.JPG)
 
 4. Open the folder where you want to save the cloned repository.
 
-   ![](C:\Users\Saf T-Flaire\Desktop\Sparta\Eng90\API-Mini-Project\Images\file.JPG)
+   ![](Images/file.JPG)
 
 5. Type "cmd" in the file directory and press ENTER.
 
 6. In the console panel (that opened) type "git clone " + the link of the cloned repository copied and press ENTER.
 
-   ![](C:\Users\Saf T-Flaire\Desktop\Sparta\Eng90\API-Mini-Project\Images\console.JPG)
+   ![](Images/console.JPG)
 
 ### Set up Visual Studio
 
@@ -56,7 +56,7 @@ This Framework was built with Visual Studio 2019 and may operate differently acc
 
    Proceed to click on the "Build Solution"
 
-   ![](C:\Users\Saf T-Flaire\Desktop\Sparta\Eng90\API-Mini-Project\Images\Build.JPG)
+   ![](Images/Build.JPG)
 
    
 
@@ -80,6 +80,6 @@ This Framework was built with Visual Studio 2019 and may operate differently acc
 
    Check all tests
 
-   ![](C:\Users\Saf T-Flaire\Desktop\Sparta\Eng90\API-Mini-Project\Images\Test.JPG)
+   ![](Images/Test.JPG)
 
    
